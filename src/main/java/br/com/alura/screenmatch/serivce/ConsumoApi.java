@@ -17,14 +17,12 @@ public class ConsumoApi {
         try {
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        String json = response.body();
-        return json;
+        String Json = response.body();
+        return Json;
     }
 
 }
